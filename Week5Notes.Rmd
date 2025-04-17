@@ -2,6 +2,7 @@
 title: "Class 5"
 output: html_document
 date: "2025-02-20"
+theme: cerulean
 ---
 
 ## Week 5
