@@ -13,3 +13,5 @@
 # subsection
 
 This is my work from week [week 2](Class-2-Notes.html)
+
+Here is the link to my blog [link](Blog.md)
