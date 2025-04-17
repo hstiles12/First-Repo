@@ -11,3 +11,5 @@
 - bullet 3 
 
 # subsection
+
+This is my work from week [week 2](Class-2-Notes.html)
