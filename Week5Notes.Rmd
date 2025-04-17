@@ -1,8 +1,12 @@
 ---
 title: "Class 5"
-output: html_document
 date: "2025-02-20"
-theme: cerulean
+output: 
+  html_document:
+    theme: cerulean
+    toc: yes
+    toc_float:
+      collapsed: true
 ---
 
 ## Week 5
