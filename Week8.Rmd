@@ -1,0 +1,55 @@
+---
+title: "Week 8?"
+output: html_document
+date: "2025-03-13"
+---
+
+Contunued, Labeling Plots
+```{r}
+library(ggplot2)
+library(ggrepel)
+library(dplyr)
+library(socviz)
+```
+
+```{r}
+data <- tibble(names=c("hailey", "thamyres", "abby"),chocolate=c(1,2,5),coffee=c(10,0,1))
+ggplot(data, aes(x = chocolate, y = coffee)) +
+  geom_point() +
+  geom_text_repel(aes(label = names))+geom_hline(yintercept = 7.5)+geom_vline(xintercept=4,color="red",linetype="dashed")
+
+```
+```{r}
+ggplot(elections_historic,aes(popular_pct,ec_pct))+geom_point(aes(color=two_term))+
+  geom_text_repel(aes(label=winner,color=))
+```
+```{r}
+bigpres<-filter(elections_historic,election>55)
+ggplot(elections_historic,mapping=aes(x=popular_pct,y=ec_pct))+geom_point(aes(color=two_term))+geom_text_repel(data=bigpres,aes(label=winner))
+                                                                        
+```
+```{r}
+```
+
+
+```{r}
+result <- organdata %>%
+  group_by(country) %>%
+  summarize(mean_gdp = mean(gdp, na.rm = TRUE),mean_health = mean(health, na.rm = TRUE))
+
+ggplot(result,mapping=aes(mean_gdp,mean_health))+geom_point()+geom_text_repel(data=result,aes(label=country))
+```
+
+```{r}
+ggplot(result,mapping=aes(mean_gdp,mean_health))+geom_point()+geom_text_repel(data=result,aes(label=country))+
+    annotate(geom="rect",xmin=25000, xmax = 30000,ymin=2000,ymax = 4000,fill="grey",alpha=0.2,color="red")+
+    annotate(geom="text",label="OUTLIERS",x=27500,y=3500,color="red")
+                        
+```
+```{r}
+mpg
+
+ggplot(mpg,aes(displ,hwy,color=drv))+geom_point()+labs(title="car milage stats",subtitle = "something", caption = "data",
+                                             x= "engine displ", y="highway mpg",color="drive type")
+```
+
